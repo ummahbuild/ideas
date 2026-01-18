@@ -35,9 +35,9 @@ Ideas are organized into categories for easy navigation:
 
 ## 💡 How to Contribute an Idea
 
-1. **Use the Template**: Copy the [IDEA_TEMPLATE.md](./IDEA_TEMPLATE.md) file
+1. **Use the Template**: Create a new file based on [IDEA_TEMPLATE.md](./IDEA_TEMPLATE.md) as a reference structure
 2. **Fill in Details**: Provide comprehensive information about your idea
-3. **Choose a Category**: Place your idea in the appropriate category folder
+3. **Choose a Category**: Place your idea in the appropriate category folder under `ideas/`
 4. **Submit**: Create a pull request or issue with your idea
 5. **Engage**: Participate in discussions and refinements
 
