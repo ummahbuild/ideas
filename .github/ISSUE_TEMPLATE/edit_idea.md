@@ -10,6 +10,8 @@ assignees: ''
 
 Reference the existing idea so we can update the idea’s markdown file in `src/content/ideas/` (e.g. `src/content/ideas/<slug>.md`).
 
+**Quick edit:** If you have write access, [edit the file directly on GitHub](https://github.com/ummahbuild/ideas/tree/main/src/content/ideas) — open the `.md` for the idea slug (e.g. `praysap.md`), click Edit, then open a PR. Otherwise describe the change below.
+
 ### Which idea?
 
 - **Slug or title** (from the [ideas board](https://ideas.ummah.build) or [src/content/ideas/](https://github.com/ummahbuild/ideas/tree/main/src/content/ideas)):

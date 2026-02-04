@@ -69,6 +69,7 @@ Track of past improvements and planned work for the Ummah.build Ideas board.
 - **Markdown-based idea pages (Astro):** Idea pages are **no longer generated** as static HTML. Source of truth is [src/content/ideas/*.md](src/content/ideas/) (one markdown file per idea with YAML frontmatter). [Astro](https://astro.build) builds the site: `npm run build` generates `public/ideas.json` from markdown and renders each idea at `/idea/[slug]/`. PRs that edit markdown are validated and built by the **Build and deploy** GitHub Action; deploy to GitHub Pages on push to main.
 - **Build script:** `scripts/build-ideas-json.mjs` uses an inline YAML-like frontmatter parser (no `gray-matter` dependency) so the build works with only Astro in dependencies.
 - **Board UX:** Sticky filter nav on scroll; **Escape** closes export dropdown and shortcut help modal; no-results state includes a **Suggest an idea** link to the GitHub issue template.
+- **GitHub workflows → pages:** **PR template** (`.github/PULL_REQUEST_TEMPLATE.md`) with checklist for content vs board edits and note that CI build deploys on merge. **Build workflow** comments on PRs when build passes with a link to edit entries (`src/content/ideas/`). **Direct edit links:** each idea card on the board and each idea page footer have an **Edit** link that opens the idea’s markdown file on GitHub (`edit/main/src/content/ideas/<slug>.md`); idea page also has “Suggest via issue” with pre-filled title. About block explains that PRs run the build and deploy.
 
 ---
 

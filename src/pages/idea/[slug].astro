@@ -211,7 +211,7 @@ const webPageLd = {
         </article>
       </main>
       <footer role="contentinfo">
-        <a href="/">Browse all Islamic tech ideas</a> · <a href="https://github.com/ummahbuild/ideas/issues/new?template=edit_idea.md">Suggest edits</a> · <a href="https://ummah.build">Ummah.build</a>
+        <a href="/">Browse all Islamic tech ideas</a> · <a href={`https://github.com/ummahbuild/ideas/edit/main/src/content/ideas/${slug}.md`} target="_blank" rel="noopener noreferrer">Edit this idea</a> · <a href={`https://github.com/ummahbuild/ideas/issues/new?template=edit_idea.md&title=[Edit+idea]+${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">Suggest via issue</a> · <a href="https://ummah.build">Ummah.build</a>
       </footer>
     </div>
     <script define:vars={{ pageUrl, slug }}>

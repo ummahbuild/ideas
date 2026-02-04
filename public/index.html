@@ -474,6 +474,7 @@
     .card-actions .btn-icon:hover { color: var(--accent); }
     .card-actions .btn-icon:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     .card-actions .btn-icon.faved { color: var(--warn); }
+    .card-actions a.btn-icon { text-decoration: none; }
     .main-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; }
     .main-actions .btn-secondary { padding: 0.4rem 0.75rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer; font-family: inherit; }
     .main-actions .btn-secondary:hover { background: var(--surface-hover); }
@@ -492,7 +493,7 @@
     <h1>Islamic Tech Ideas Board</h1>
     <p class="subtitle">Open source ideas for prayer tools, mosque apps, zakat, Quran, Ramadan, and Islamic finance. Filter by category and status, then use templates and workflows to take ideas into production.</p>
     <div class="about-block" id="about-block">
-      <strong>What this is:</strong> A curated list of Islamic tech ideas from <a href="https://ummah.build">Ummah.build</a>. Each idea has a description, status, and feature list. Use the <a href="https://github.com/ummahbuild/ideas/tree/main/docs/templates">templates</a> (idea dissection, Islamic authenticity, go-to-market, personas, messaging) and <a href="https://github.com/ummahbuild/ideas/tree/main/docs/workflows">workflows</a> to go from idea to MVP or launch. Subscribe: <a href="/feed.json">JSON Feed</a>, <a href="/feed.xml">RSS</a>.
+      <strong>What this is:</strong> A curated list of Islamic tech ideas from <a href="https://ummah.build">Ummah.build</a>. Each idea has a description, status, and feature list. <strong>Edit entries:</strong> use <strong>Edit</strong> on a card or idea page (opens the markdown file on GitHub); PRs run the build and deploy to this site. Use the <a href="https://github.com/ummahbuild/ideas/tree/main/docs/templates">templates</a> and <a href="https://github.com/ummahbuild/ideas/tree/main/docs/workflows">workflows</a> to go from idea to MVP. Subscribe: <a href="/feed.json">JSON Feed</a>, <a href="/feed.xml">RSS</a>.
     </div>
   </header>
   <nav aria-label="Filter ideas">
@@ -889,9 +890,11 @@
               reqs.map(function (r) { return '<li>' + escapeHtml(r) + '</li>'; }).join('') + '</ul>';
           }
           var fav = getFavorites().has(slug);
+          var editUrl = 'https://github.com/ummahbuild/ideas/edit/main/src/content/ideas/' + encodeURIComponent(slug) + '.md';
           var cardActionsHtml = '<div class="card-actions">' +
             '<button type="button" class="btn-icon btn-fav ' + (fav ? 'faved' : '') + '" data-slug="' + escapeHtml(slug) + '" aria-label="' + (fav ? 'Remove from favorites' : 'Add to favorites') + '">' + (fav ? '★' : '☆') + '</button>' +
             '<button type="button" class="btn-icon btn-copy-card" data-slug="' + escapeHtml(slug) + '" aria-label="Copy link to this idea">Copy link</button>' +
+            '<a href="' + escapeHtml(editUrl) + '" class="btn-icon" target="_blank" rel="noopener noreferrer" aria-label="Edit this idea on GitHub">Edit</a>' +
             '</div>';
           card.innerHTML =
             '<div class="card-head">' +
