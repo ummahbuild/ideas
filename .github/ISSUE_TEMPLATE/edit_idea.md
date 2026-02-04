@@ -8,11 +8,12 @@ assignees: ''
 
 ## Edit idea
 
-Reference the existing idea so we can update `ideas.json` correctly.
+Reference the existing idea so we can update the idea’s markdown file in `src/content/ideas/` (e.g. `src/content/ideas/<slug>.md`).
 
 ### Which idea?
 
-- **Slug or title** (from the ideas board or [ideas.json](https://github.com/ummahbuild/ideas/blob/main/ideas.json)):
+- **Slug or title** (from the [ideas board](https://ideas.ummah.build) or [src/content/ideas/](https://github.com/ummahbuild/ideas/tree/main/src/content/ideas)):
+- **Idea page** (if known): `https://ideas.ummah.build/idea/<slug>/`
 
 ### What to change
 

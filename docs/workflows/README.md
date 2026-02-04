@@ -58,9 +58,29 @@ See [CONTRIBUTING.md](https://github.com/ummahbuild/ideas/blob/main/CONTRIBUTING
 
 ---
 
+## Workflow 4: You built something — add it to the board
+
+| Step | Action |
+|------|--------|
+| 1 | Update the idea in [ideas.json](https://github.com/ummahbuild/ideas/blob/main/ideas.json): set `status` to `in-progress` or `production`, add `url` with your live link. |
+| 2 | Run `node scripts/generate-idea-html.mjs` to regenerate the idea page and sitemap (or open a PR and a maintainer can run it). |
+| 3 | Optional: Open an [Edit existing idea](https://github.com/ummahbuild/ideas/issues/new?template=edit_idea.md) issue with the same changes so the community sees the update. |
+
+If it’s a **new** idea (not on the board), use [Suggest new idea](https://github.com/ummahbuild/ideas/issues/new?template=new_idea.md) and include your live URL.
+
+---
+
+## Quick start (minimal path)
+
+**[Build one idea in a weekend](quick-start.md)** – 3-day path: define, build one screen, deploy, share, get feedback.
+
+---
+
 ## Quick links
 
 - **Board:** [ideas.ummah.build](https://ideas.ummah.build)
-- **Templates:** [docs/templates/](../templates/)
+- **Quick start:** [quick-start.md](quick-start.md)
+- **Templates:** [docs/templates/](../templates/) · [Launch checklist](../templates/launch-checklist.md)
+- **Docs index:** [docs/README.md](../README.md)
 - **Comprehensive idea structure:** [COMPREHENSIVE_IDEA_STRUCTURE.md](../COMPREHENSIVE_IDEA_STRUCTURE.md)
 - **Improvements log:** [IMPROVEMENTS.md](https://github.com/ummahbuild/ideas/blob/main/IMPROVEMENTS.md)

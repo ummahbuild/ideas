@@ -70,10 +70,14 @@ jobs:
         with:
           script: |
             const labels = context.payload.issue.labels.map(l => l.name);
-            if (!labels.includes('new-idea') && !labels.includes('edit-idea')) return;
+            if (!labels.includes('new-idea') && !labels.includes('edit-idea') && !labels.includes('template')) return;
+            const base = 'https://github.com/' + context.repo.owner + '/' + context.repo.repo;
+            const body = labels.includes('template')
+              ? 'Thanks for using a doc template! See [docs/templates](' + base + '/tree/main/docs/templates) and [workflows](' + base + '/tree/main/docs/workflows) for more.'
+              : 'Thanks for contributing to the ideas board! Maintainers will review and update [ideas.json](' + base + '/blob/main/ideas.json) or [categories](' + base + '/blob/main/categories.json) as needed. See [CONTRIBUTING.md](' + base + '/blob/main/CONTRIBUTING.md) for how to contribute.';
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Thanks for contributing to the ideas board! Maintainers will review and update [ideas.json](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/ideas.json) or [categories](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/categories.json) as needed. See [CONTRIBUTING.md](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/CONTRIBUTING.md) for how to contribute.'
+              body
             });

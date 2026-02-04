@@ -10,9 +10,10 @@
 
 | Resource | Description |
 |----------|-------------|
-| [**Ideas board**](index.html) | Notion-style board at [ideas.ummah.build](https://ideas.ummah.build): filter by category/status, sort, search, shareable URLs, deep links, **related ideas** per card. |
-| [ideas.json](ideas.json) | Structured list of ideas (title, description, slug, status, features, categories). |
-| [categories.json](categories.json) | 22 categories (Prayer tools, Mosque, Zakat, Quran, Ramadan, etc.) for filtering and SEO. |
+| [**Ideas board**](public/index.html) | Notion-style board at [ideas.ummah.build](https://ideas.ummah.build): filter by category/status, sort, search, shareable URLs, deep links, **related ideas** per card. |
+| [**src/content/ideas/**](src/content/ideas/) | **Source of truth:** one **markdown** file per idea (e.g. `praysap.md`) with YAML frontmatter. Edit these files and open a PR; no generated HTML to commit. |
+| **Build** | [Astro](https://astro.build) builds the site: `ideas.json` is generated from markdown; idea pages are rendered at **/idea/[slug]/**. Run `npm run build`. CI runs on every PR/push. |
+| [categories.json](categories.json) / [public/categories.json](public/categories.json) | 22 categories (Prayer tools, Mosque, Zakat, Quran, Ramadan, etc.) for filtering and SEO. |
 | [schema/idea.schema.json](schema/idea.schema.json) | JSON schema for validating idea structure. |
 | [**Templates**](docs/templates/README.md) | Idea dissection, Islamic authenticity, go-to-market, competitive analysis, market research, brand/naming, personas, messaging, social media. |
 | [**Workflows**](docs/workflows/README.md) | Step-by-step: idea → MVP and idea → funded launch (with links to templates). |
@@ -46,7 +47,7 @@ Full flow: [Workflows: Idea → production](docs/workflows/README.md).
 - **New idea:** [Open an issue](https://github.com/ummahbuild/ideas/issues/new/choose) → choose **Suggest new idea**.
 - **Edit idea:** [Open an issue](https://github.com/ummahbuild/ideas/issues/new/choose) → choose **Edit existing idea**.
 
-You can also open a PR that edits [ideas.json](ideas.json) and [categories.json](categories.json) directly; CI validates the structure. See [CONTRIBUTING.md](CONTRIBUTING.md).
+You can also open a PR that **edits or adds markdown** in [src/content/ideas/](src/content/ideas/) (and optionally [public/categories.json](public/categories.json)); the **Build and deploy** workflow validates and builds the site. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -60,10 +61,22 @@ You can also open a PR that edits [ideas.json](ideas.json) and [categories.json]
 
 ---
 
+## Local development and build
+
+- **Prerequisites:** Node.js 20+
+- **Install:** `npm install`
+- **Build:** `npm run build` — generates `public/ideas.json` from `src/content/ideas/*.md`, then builds the Astro site (board in `public/` is copied to `dist/`; idea pages are rendered to `dist/idea/[slug]/`).
+- **Preview:** `npm run preview` — serves `dist/` locally.
+- **Dev:** `npm run dev` — builds ideas.json and runs Astro dev server (board and idea pages).
+
+To deploy via GitHub Pages: in the repo **Settings → Pages**, set **Source** to **GitHub Actions**. The **Build and deploy** workflow will build and deploy on every push to `main`.
+
+---
+
 ## License
 
 This ideas list and board are open source. See [LICENSE](LICENSE) if present; otherwise use and contribute in good faith.
 
 ---
 
-[Ummah.build](https://ummah.build) · [Board](https://ideas.ummah.build) · [Contribute](CONTRIBUTING.md) · [Templates](docs/templates/README.md) · [Workflows](docs/workflows/README.md) · [Improvements](IMPROVEMENTS.md)
+[Ummah.build](https://ummah.build) · [Board](https://ideas.ummah.build) · [Contribute](CONTRIBUTING.md) · [Docs](docs/README.md) · [Templates](docs/templates/README.md) · [Workflows](docs/workflows/README.md) · [Improvements](IMPROVEMENTS.md)

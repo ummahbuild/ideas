@@ -14,5 +14,6 @@ Reusable templates for turning Islamic tech ideas into clear, actionable, and pr
 | [Target personas](target-personas.md) | Define who you’re building for |
 | [Messaging for personas](messaging-for-personas.md) | Copy and value props per persona |
 | [Social media marketing](social-media-marketing.md) | Streamlined social and content plan |
+| [Launch checklist](launch-checklist.md) | Pre-launch checklist for Islamic tech products |
 
 See [../workflows/README.md](../workflows/README.md) for how these fit into the **idea → production** workflow.

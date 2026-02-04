@@ -1,0 +1,18 @@
+{
+  "name": "ummah-build-ideas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/build-ideas-json.mjs && astro dev",
+    "build": "node scripts/build-ideas-json.mjs && astro build",
+    "preview": "astro preview",
+    "content:json": "node scripts/build-ideas-json.mjs"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

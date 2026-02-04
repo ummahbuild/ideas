@@ -1,0 +1,207 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Ummah.build Islamic Tech Ideas",
+  "home_page_url": "https://ideas.ummah.build/",
+  "feed_url": "https://ideas.ummah.build/feed.json",
+  "description": "Open source Islamic tech ideas: prayer tools, mosque apps, zakat, Quran, Ramadan, Islamic finance. Filter and contribute at ideas.ummah.build.",
+  "items": [
+    {
+      "id": "https://ideas.ummah.build/idea/praysap/",
+      "url": "https://ideas.ummah.build/idea/praysap/",
+      "title": "🤲 PRAYSAP",
+      "content_text": "The only app to connect with Muslims to prayers. Making prayers a habit with the Ummah.\n• Real-time prayer time notifications based on user location\n• Nearby Muslim discovery for congregation prayers\n• Prayer streak tracking and gamification\n• Mosque finder with walking directions\n• Community prayer challenges and leaderboards"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/sunnahsleep/",
+      "url": "https://ideas.ummah.build/idea/sunnahsleep/",
+      "title": "🌙 SunnahSleep",
+      "content_text": "Cure insomnia with Sunnah based practices\n• Comprehensive Sunnah sleep checklist with detailed Hadith references\n• Quranic recitations with audio (Ayat al-Kursi, last verses of Baqarah, Three Quls)\n• Tasbih counter for bedtime dhikr\n• Sleep tracking with Isha/Fajr prayer adherence monitoring\n• Smart prayer alarms including Tahajjud calculations"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/jummahdao/",
+      "url": "https://ideas.ummah.build/idea/jummahdao/",
+      "title": "🕌 JummahDAO",
+      "content_text": "Community to meetup for Friday prayers at crypto events. Connecting the Web3 Muslim community.\n• Event-based Jummah prayer coordination\n• Web3 wallet integration for membership\n• Conference and event schedule integration\n• Community governance for event planning\n• NFT-based membership and attendance tracking"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/mosque-database/",
+      "url": "https://ideas.ummah.build/idea/mosque-database/",
+      "title": "🗄️ Mosque Database",
+      "content_text": "Database of every mosque, their prayer times, Khutbah information as open API.\n• Global mosque directory with verified information\n• Prayer time API with multiple calculation methods\n• Khutbah schedules and searchable archives\n• Imam and scholar profiles\n• Facilities information (parking, accessibility, women's section)"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/mosquetv/",
+      "url": "https://ideas.ummah.build/idea/mosquetv/",
+      "title": "📺 MosqueTV",
+      "content_text": "A comprehensive media platform for discovering and accessing mosque livestreams worldwide.\n• Directory of mosque livestreams worldwide\n• Community-submitted streams with verification\n• Multi-language support\n• Prayer time-based recommendations\n• Stream archive and recordings"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/khutbah-sentiment/",
+      "url": "https://ideas.ummah.build/idea/khutbah-sentiment/",
+      "title": "📊 Khutbah Sentiment",
+      "content_text": "AI platform that aggregates Friday khutbah speeches, analyzing sentiment, themes, and topics.\n• Speech-to-text transcription for khutbahs\n• Sentiment and topic analysis\n• Weekly trend reports with visualizations\n• Searchable archive by theme, keyword, date, and location\n• Comparative analysis across regions"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/imam-khutbah-assistant/",
+      "url": "https://ideas.ummah.build/idea/imam-khutbah-assistant/",
+      "title": "🎙️ Imam Khutbah Assistant",
+      "content_text": "AI-powered platform providing real-time translation of khutbahs and referenced Quranic verses.\n• Real-time speech translation to multiple languages\n• Automatic Quranic verse detection with Arabic and translations\n• Tafsir integration for referenced verses\n• Hadith reference lookup with grading\n• Livestream integration"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/wudu-hero/",
+      "url": "https://ideas.ummah.build/idea/wudu-hero/",
+      "title": "🦸 Wudu Hero",
+      "content_text": "Gamified wudu teaching app using computer vision to track movements and provide feedback.\n• Computer vision for wudu step detection\n• Real-time movement tracking via camera\n• Gamification with points, badges, and achievements\n• Multiple madhab support\n• Voice guidance in multiple languages"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/lower-your-gaze/",
+      "url": "https://ideas.ummah.build/idea/lower-your-gaze/",
+      "title": "👁️ Lower Your Gaze",
+      "content_text": "First-person game practicing the Islamic principle of lowering gaze with eye-tracking technology.\n• First-person city navigation gameplay\n• Eye-tracking integration\n• Score-based gaze avoidance mechanics\n• Progressive difficulty levels\n• Islamic reminders and hadith integration"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/travel-mode/",
+      "url": "https://ideas.ummah.build/idea/travel-mode/",
+      "title": "✈️ Travel Mode",
+      "content_text": "Feature to adjust prayer times and enable shortened prayers (Qasr) for traveling Muslims.\n• Automatic travel detection via GPS\n• Qasr prayer notifications and guidance\n• Multiple madhab rulings support\n• Combining prayers (Jam') guidance\n• Airport and transit prayer room finder"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/proof-of-zakat/",
+      "url": "https://ideas.ummah.build/idea/proof-of-zakat/",
+      "title": "✅ Proof of Zakat",
+      "content_text": "Verification system confirming charitable donations without revealing specific amounts.\n• Zero-knowledge proof for privacy\n• Integration with major charity platforms\n• Nisab threshold verification\n• Annual zakat obligation tracking\n• Privacy-preserving donation receipts"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/taraweeh-tracker/",
+      "url": "https://ideas.ummah.build/idea/taraweeh-tracker/",
+      "title": "📖 Taraweeh Tracker",
+      "content_text": "System to track where in the Quran and how deep into Taraweeh a mosque is during Ramadan.\n• Mosque-by-mosque progress tracking\n• Juz and Surah completion status\n• Community-sourced updates\n• Notification when favorite surah approaching\n• Multiple mosque following"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/mosquebuilder/",
+      "url": "https://ideas.ummah.build/idea/mosquebuilder/",
+      "title": "🏗️ MosqueBuilder",
+      "content_text": "Application to design mosques based on popular styles, cost, capacity and programs.\n• 3D mosque design templates\n• Style library (Ottoman, Moorish, Modern, etc.)\n• Cost estimation based on region\n• Capacity calculator and space planning\n• Accessibility compliance checker"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/mosque-funder/",
+      "url": "https://ideas.ummah.build/idea/mosque-funder/",
+      "title": "💵 Mosque Funder",
+      "content_text": "Capital allocation systems to fund new mosques based on community needs.\n• Mosque need assessment algorithm\n• Community density and demand analysis\n• Crowdfunding platform with milestone tracking\n• Sharia-compliant investment structures\n• Donor dashboard and impact reporting"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/prayercalendarsync/",
+      "url": "https://ideas.ummah.build/idea/prayercalendarsync/",
+      "title": "📅 PrayerCalendarSync",
+      "content_text": "Automated prayer time blocking on calendars with customizable buffers based on location.\n• Google Calendar and Outlook integration\n• Automatic prayer time blocking\n• Customizable buffer times\n• Location-based time updates\n• Meeting conflict detection"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/circadian-prayer/",
+      "url": "https://ideas.ummah.build/idea/circadian-prayer/",
+      "title": "🌅 Circadian Prayer",
+      "content_text": "Sleep and wellness app to regulate circadian rhythm around Fajr prayer.\n• Sleep cycle analysis and optimization\n• Gradual Fajr wake-up training\n• Smart alarm with sleep phase detection\n• Bedtime recommendations for Fajr\n• Sleep quality tracking"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/sunnah-reply/",
+      "url": "https://ideas.ummah.build/idea/sunnah-reply/",
+      "title": "🐦 Sunnah Reply",
+      "content_text": "AI bot that responds to tweets with relevant hadith and sunnah teachings.\n• Twitter/X integration\n• Context understanding AI\n• Authenticated hadith database with grading\n• Relevance scoring\n• Rate limiting and spam prevention"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/islamic-will/",
+      "url": "https://ideas.ummah.build/idea/islamic-will/",
+      "title": "📜 Islamic Will",
+      "content_text": "Automated will creation following Islamic inheritance law (Faraid) with zakat allocations.\n• Faraid calculation engine\n• Multi-madhab inheritance rules\n• Asset inventory and valuation\n• Automatic heir identification\n• Wasiyyah (bequest) allocation"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/iftar-potluck/",
+      "url": "https://ideas.ummah.build/idea/iftar-potluck/",
+      "title": "🍽️ Iftar Potluck",
+      "content_text": "App to coordinate iftar potlucks during Ramadan with dietary restrictions tracking.\n• Event creation and RSVP system\n• Dish signup with ingredient lists\n• Dietary restriction tracking\n• Duplicate dish prevention\n• Portion size recommendations"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/quran-by-mood/",
+      "url": "https://ideas.ummah.build/idea/quran-by-mood/",
+      "title": "📿 Quran By Mood",
+      "content_text": "AI app recommending Quranic surahs based on emotional state.\n• Mood input interface\n• AI-powered surah recommendation\n• Tafsir context for recommendations\n• Audio recitation with multiple qaris\n• Journaling and reflection"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/adhaan-amplifier/",
+      "url": "https://ideas.ummah.build/idea/adhaan-amplifier/",
+      "title": "📢 Adhaan Amplifier",
+      "content_text": "Mesh network to broadcast synchronized adhaan across cities using IoT devices.\n• Mesh network for synchronized adhaan\n• Precise time synchronization\n• Multiple adhaan style support\n• Volume and reach configuration\n• Community opt-in system"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/masjid-vr-explorer/",
+      "url": "https://ideas.ummah.build/idea/masjid-vr-explorer/",
+      "title": "🥽 Masjid VR Explorer",
+      "content_text": "VR platform for immersive 3D tours of historic mosques worldwide.\n• 360° mosque photogrammetry\n• VR headset compatibility\n• Guided tour narration\n• Historical information overlays\n• Architectural detail exploration"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/visual-isnad-explorer/",
+      "url": "https://ideas.ummah.build/idea/visual-isnad-explorer/",
+      "title": "🔗 Visual Isnad Explorer",
+      "content_text": "Interactive visualization of hadith chains of narration as interconnected graphs.\n• Graph database for narrator relationships\n• Interactive network visualization\n• Narrator biography integration\n• Chain strength analysis\n• Multiple hadith collection support"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/eid-moon-tracker/",
+      "url": "https://ideas.ummah.build/idea/eid-moon-tracker/",
+      "title": "🌙 Eid Moon Tracker",
+      "content_text": "Crowdsourced platform for real-time moon sighting reports to determine Eid dates.\n• Geolocation-based sighting reports\n• Photo verification system\n• Astronomical calculation comparison\n• Regional authority integration\n• Real-time global sighting map"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/ummom/",
+      "url": "https://ideas.ummah.build/idea/ummom/",
+      "title": "👩‍👧 UmMOM",
+      "content_text": "AI parenting platform for Muslim mothers with age-appropriate Islamic guidance.\n• Child development milestone tracking\n• Age-appropriate Islamic teaching content\n• Dua and sunnah database for parenting\n• Community forum for mothers\n• Expert Q&A with scholars"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/halal-food-accountability/",
+      "url": "https://ideas.ummah.build/idea/halal-food-accountability/",
+      "title": "🥩 Halal Food Accountability",
+      "content_text": "Decentralized halal certification verification through supply chain tracking.\n• Blockchain supply chain tracking\n• QR code verification system\n• Slaughter method documentation\n• Certification authority integration\n• Consumer reporting mechanism"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/modern-zakat/",
+      "url": "https://ideas.ummah.build/idea/modern-zakat/",
+      "title": "💰 Modern Zakat",
+      "content_text": "Zakat calculator for modern assets: crypto, stocks, RSUs and digital investments.\n• Cryptocurrency portfolio integration\n• Stock and ETF valuation\n• RSU vesting tracking\n• Real-time nisab calculation\n• Multiple currency support"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/modestai/",
+      "url": "https://ideas.ummah.build/idea/modestai/",
+      "title": "👗 ModestAI",
+      "content_text": "Fashion AI that redesigns outfits in a modest manner.\n• Image-to-image outfit transformation\n• Multiple modesty style options\n• Hijab styling suggestions\n• Occasion-based recommendations\n• Brand and store integration"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/masjid-exit-game/",
+      "url": "https://ideas.ummah.build/idea/masjid-exit-game/",
+      "title": "🎮 Masjid Exit Game",
+      "content_text": "Mini game gamifying mosque exit etiquette when in the front row.\n• 2D puzzle game mechanics\n• Multiple mosque layout levels\n• Etiquette rule enforcement\n• Score and time challenges\n• Educational sunnah pop-ups"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/prayline/",
+      "url": "https://ideas.ummah.build/idea/prayline/",
+      "title": "📐 PRAYLINE",
+      "content_text": "AI system to help people align and pray in a single file line.\n• Computer vision line detection\n• Real-time alignment feedback\n• Mosque display integration\n• Audio and visual cues\n• Gap detection and notifications"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/electronic-prayer-beads/",
+      "url": "https://ideas.ummah.build/idea/electronic-prayer-beads/",
+      "title": "📿 Electronic Prayer Beads",
+      "content_text": "Digital prayer beads (tasbih) for counting dhikr with multiple counters, custom dhikr lists, and progress tracking.\n• Multiple counters for different dhikr\n• Custom dhikr list creation\n• Daily goals and streak tracking\n• Beautiful visual beads interface\n• Sound and vibration feedback"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/hajj-guide/",
+      "url": "https://ideas.ummah.build/idea/hajj-guide/",
+      "title": "🕋 Hajj Guide",
+      "content_text": "A comprehensive resource for Muslims preparing to undertake the sacred journey to Makkah. Step-by-step guidance, religious significance, and practical requirements.\n• Step-by-step guidance for Hajj and Umrah\n• Religious significance of rites and rituals\n• Practical requirements (visa, health, packing)\n• Timeline and checklist for preparation\n• Maps and logistics for Makkah and Madinah"
+    },
+    {
+      "id": "https://ideas.ummah.build/idea/shariaconvert/",
+      "url": "https://ideas.ummah.build/idea/shariaconvert/",
+      "title": "📜 ShariaConvert",
+      "content_text": "Automatically convert legal documents into Sharia-compliant ones. Convert any conventional contract into a Shariah-compliant version in minutes. Built with privacy-first architecture — all processing happens locally in your browser.\n• Convert any conventional contract into a Shariah-compliant version in minutes\n• Privacy-first architecture — all processing happens locally in your browser\n• Contract Editor — Markdown-based dual-pane editor with live preview\n• Compliance Analyzer — Automatic detection of Shariah violations (riba, gharar, maysir)\n• Template Library — pre-built Shariah-compliant contract templates"
+    }
+  ]
+}

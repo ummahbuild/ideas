@@ -49,20 +49,35 @@ Track of past improvements and planned work for the Ummah.build Ideas board.
 - **About block** on page: “What this is” with links to templates and workflows (visible to crawlers and users)
 - Semantic headings and article structure
 
-### Latest (app improvements)
-- **Dark theme:** Toggle (🌓) cycles light → dark → system; preference stored in `localStorage`; respects `prefers-color-scheme` when set to system
-- **Export:** “Export JSON” downloads the currently filtered + sorted ideas as a JSON file
-- **Keyboard:** Press `/` to focus search (when not in an input); “/ to focus” hint next to search on desktop
-- **Clear filters:** When no results, “Clear filters” button resets category, status, search, and sort
+### Latest (app functionality)
+- **Favorites:** Star (☆/★) on each card to save ideas; “⭐ Favorites (N)” pill shows only favorited ideas; stored in `localStorage`
+- **Surprise me:** Picks a random idea from the current list, scrolls to it, and expands its features
+- **Expand all / Collapse all:** Buttons above the grid to open or close all feature lists at once
+- **Export:** Dropdown with **JSON** and **CSV**; CSV includes title, description, status, quality, url, slug, categories, requirements
+- **Stats breakdown:** Board stats show “X production · Y in progress · Z ideating”
+- **Copy link to idea:** Each card has a “Copy link” button that copies the direct link (e.g. `ideas.ummah.build#idea-praysap`)
+- **Dark theme:** Toggle (🌓) cycles light → dark → system; preference in `localStorage`
+- **Keyboard:** `/` focuses search; “/ to focus” hint on desktop
+- **Clear filters:** Resets category, status, search, sort, and favorites view
+- **One markdown file per idea:** [ideas/](ideas/) with `<slug>.md`; generated via `node scripts/generate-idea-pages.mjs`
+- **One HTML page per idea (routing):** [idea/](idea/) with `idea/<slug>/index.html` so each idea has its own URL (e.g. ideas.ummah.build/idea/praysap/). Board links and “Copy link” point to these pages. Generated via `node scripts/generate-idea-html.mjs`; script also updates sitemap.xml with all idea URLs
+- **Idea page actions:** Each idea page has **Copy link** and **Print** buttons; print CSS hides nav and actions
+- **RSS/JSON feed:** [feed.json](feed.json) (JSON Feed 1.1) and [feed.xml](feed.xml) (RSS 2.0); generated via `node scripts/generate-feed.mjs`; board links to both in head and About block
+- **Template picker issue:** "Use a doc template" issue template with checklist of all [docs/templates](docs/templates) and links
+- **Labels doc:** [docs/labels.md](docs/labels.md) with recommended GitHub labels
+- **View modes:** **Grid** (default), **List** (compact rows), **Gallery** (larger cards), **Kanban** (columns by status: Ideating, In progress, Production, Archived). View stored in URL (`?view=`) and `localStorage`; shareable links preserve view.
+- **Markdown-based idea pages (Astro):** Idea pages are **no longer generated** as static HTML. Source of truth is [src/content/ideas/*.md](src/content/ideas/) (one markdown file per idea with YAML frontmatter). [Astro](https://astro.build) builds the site: `npm run build` generates `public/ideas.json` from markdown and renders each idea at `/idea/[slug]/`. PRs that edit markdown are validated and built by the **Build and deploy** GitHub Action; deploy to GitHub Pages on push to main.
+- **Build script:** `scripts/build-ideas-json.mjs` uses an inline YAML-like frontmatter parser (no `gray-matter` dependency) so the build works with only Astro in dependencies.
+- **Board UX:** Sticky filter nav on scroll; **Escape** closes export dropdown and shortcut help modal; no-results state includes a **Suggest an idea** link to the GitHub issue template.
 
 ---
 
 ## Roadmap / future improvements
 
-- [ ] **Individual idea pages** (e.g. `/idea/praysap`) for per-idea SEO and deep linking
-- [ ] **RSS/JSON feed** of ideas for syndication and AI ingestion
-- [ ] **Template picker** in GitHub issue forms (e.g. “Use GTM template”) with links to docs
-- [ ] **Labels** in repo: `category:mosque`, `status:production` for filtering issues
+- [x] ~~**Individual idea pages** (e.g. `/idea/praysap`) for per-idea SEO and deep linking~~ (done)
+- [x] ~~**RSS/JSON feed** of ideas for syndication and AI ingestion~~ (done)
+- [x] ~~**Template picker** in GitHub issue forms (e.g. "Use GTM template") with links to docs~~ (done: "Use a doc template" template)
+- [x] ~~**Labels** in repo: `category:mosque`, `status:production` for filtering issues~~ (doc added; create labels in GitHub Settings)
 - [ ] **Automated “related ideas”** from tags or description similarity (e.g. embed-based)
 - [x] ~~**Light/dark theme toggle**~~ (done)
 - [x] ~~**Export** filtered list as JSON~~ (done; CSV optional later)

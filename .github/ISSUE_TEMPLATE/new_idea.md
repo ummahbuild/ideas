@@ -73,4 +73,6 @@ If you’re comfortable with JSON, you can paste a single idea object here so we
 
 ---
 
+**Workflow:** After submitting, see [Idea → MVP workflow](https://github.com/ummahbuild/ideas/tree/main/docs/workflows#workflow-1-idea--mvp-solo-or-small-team) or [Quick start](https://github.com/ummahbuild/ideas/blob/main/docs/workflows/quick-start.md) to take the idea to production.
+
 - [ ] I have read [CONTRIBUTING.md](https://github.com/ummahbuild/ideas/blob/main/CONTRIBUTING.md).
