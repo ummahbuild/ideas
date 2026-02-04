@@ -1,0 +1,79 @@
+# Validate ideas.json and categories against schema; optional automation for issues
+name: Ideas
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'ideas.json'
+      - 'categories.json'
+      - 'schema/**'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'ideas.json'
+      - 'categories.json'
+      - 'schema/**'
+  issues:
+    types: [opened]
+
+jobs:
+  validate:
+    name: Validate ideas & categories
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate ideas.json (structure)
+        run: |
+          node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('ideas.json', 'utf8'));
+            if (!Array.isArray(data)) throw new Error('ideas.json must be a JSON array');
+            const required = ['id', 'title', 'description', 'slug', 'status'];
+            data.forEach((idea, i) => {
+              required.forEach(f => {
+                if (idea[f] === undefined || idea[f] === null)
+                  throw new Error('Idea at index ' + i + ' missing required field: ' + f);
+              });
+              if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(idea.slug)))
+                throw new Error('Idea at index ' + i + ' has invalid slug: ' + idea.slug);
+              const statuses = ['ideating', 'in-progress', 'production', 'archived'];
+              if (!statuses.includes(idea.status))
+                throw new Error('Idea at index ' + i + ' invalid status: ' + idea.status);
+            });
+            console.log('ideas.json: ' + data.length + ' ideas, validation OK');
+          "
+
+      - name: Validate categories.json
+        run: |
+          node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('categories.json', 'utf8'));
+            if (!data.categories || !Array.isArray(data.categories))
+              throw new Error('categories.json must have a categories array');
+            data.categories.forEach((c, i) => {
+              if (!c.slug || !c.name)
+                throw new Error('Category at index ' + i + ' missing slug or name');
+            });
+            console.log('categories.json: ' + data.categories.length + ' categories, validation OK');
+          "
+
+  # Optional: add comment on new-idea / edit-idea issues with contribution link
+  issue-triage:
+    name: Issue triage
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    steps:
+      - name: Comment on idea issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.issue.labels.map(l => l.name);
+            if (!labels.includes('new-idea') && !labels.includes('edit-idea')) return;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thanks for contributing to the ideas board! Maintainers will review and update [ideas.json](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/ideas.json) or [categories](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/categories.json) as needed. See [CONTRIBUTING.md](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/main/CONTRIBUTING.md) for how to contribute.'
+            });

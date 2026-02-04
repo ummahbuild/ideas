@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <title>Islamic Tech Ideas Board | Ummah.build – Prayer, Mosque, Zakat, Quran, Ramadan</title>
+  <meta name="description" content="Browse 30+ Islamic tech ideas: prayer tools, mosque apps, zakat, Quran, Ramadan, Islamic finance. Open source ideas board for ummah.build. Suggest and contribute via GitHub." />
+  <meta name="keywords" content="Islamic tech, ummah build, prayer app, mosque, zakat, Quran, Ramadan, Islamic finance, Muslim developer, halal tech, ideas board" />
+  <link rel="canonical" href="https://ideas.ummah.build/" />
+  <link rel="dns-prefetch" href="https://ummah.build" />
+  <link rel="dns-prefetch" href="https://github.com" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ummah.build Ideas" />
+  <meta property="og:title" content="Islamic Tech Ideas Board | Ummah.build" />
+  <meta property="og:description" content="Browse and contribute to Islamic tech ideas: prayer tools, mosque, zakat, Quran, Ramadan, Islamic finance. Open source ideas board." />
+  <meta property="og:url" content="https://ideas.ummah.build/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://ideas.ummah.build/og.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Islamic Tech Ideas Board | Ummah.build" />
+  <meta name="twitter:description" content="Browse and contribute to Islamic tech ideas: prayer, mosque, zakat, Quran, Ramadan, Islamic finance. Open source." />
+  <meta name="twitter:image" content="https://ideas.ummah.build/og.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="author" content="Ummah.build" />
+  <meta name="generator" content="Ummah.build Ideas Board" />
+  <!-- AI / crawler-friendly summary -->
+  <meta name="summary" content="Open source Islamic tech ideas board: 30+ ideas for prayer tools, mosque apps, zakat, Quran, Ramadan, Islamic finance. Filter by category and status. Templates and workflows for taking ideas to production." />
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --surface: #ffffff;
+      --surface-hover: #f1f1ef;
+      --border: rgba(55, 53, 47, 0.16);
+      --text: #37352f;
+      --text-muted: #6b6b6b;
+      --accent: #0b6bcb;
+      --accent-soft: rgba(11, 107, 203, 0.08);
+      --success: #0f7b6c;
+      --warn: #9a6700;
+      --danger: #eb5757;
+      --radius: 6px;
+      --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, monospace;
+      --shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      z-index: 100;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .skip-link:focus { top: 0; left: 0; }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    header .subtitle {
+      margin: 0.5rem 0 0;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .about-block {
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface-hover);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .about-block strong { color: var(--text); }
+    .about-block a { color: var(--accent); text-decoration: underline; }
+    .about-block a:hover { text-decoration-thickness: 2px; }
+    .about-block a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    nav {
+      padding: 0.75rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    nav h2 { margin: 0; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .filter-group { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .filter-group:not(:first-child) { margin-left: 0.5rem; }
+    .pill {
+      display: inline-block;
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
+    }
+    .pill:hover { background: var(--surface-hover); border-color: var(--text-muted); }
+    .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+    .pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .search-wrap { margin-left: auto; }
+    .search-wrap input {
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.9rem;
+      min-width: 180px;
+    }
+    .search-wrap input::placeholder { color: var(--text-muted); }
+    .search-wrap input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+    .search-wrap input:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+    .sort-wrap, .share-wrap { display: flex; align-items: center; gap: 0.5rem; }
+    .sort-wrap label { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+    .sort-wrap select {
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .sort-wrap select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .share-btn {
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .share-btn:hover { background: var(--surface-hover); border-color: var(--text-muted); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .pill .count { opacity: 0.7; font-size: 0.75em; margin-left: 0.15rem; }
+    .idea-card:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); scroll-margin-top: 1rem; }
+    main {
+      padding: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .board-stats { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem; }
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .idea-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.12s, border-color 0.12s;
+      box-shadow: var(--shadow);
+    }
+    .idea-card:hover { border-color: rgba(55, 53, 47, 0.25); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .idea-card .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .idea-card .emoji { font-size: 1.75rem; line-height: 1; }
+    .idea-card .title-wrap { flex: 1; min-width: 0; }
+    .idea-card .title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .idea-card .title a { color: inherit; text-decoration: none; }
+    .idea-card .title a:hover { color: var(--accent); text-decoration: underline; }
+    .idea-card .title a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .idea-card .description {
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .idea-card .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .badge-status-ideating { background: var(--surface-hover); color: var(--text-muted); }
+    .badge-status-in-progress { background: rgba(154, 103, 0, 0.1); color: var(--warn); }
+    .badge-status-production { background: rgba(15, 123, 108, 0.1); color: var(--success); }
+    .badge-status-archived { background: rgba(235, 87, 87, 0.1); color: var(--danger); }
+    .badge-quality-okay { background: var(--surface-hover); color: var(--text-muted); }
+    .badge-quality-good { background: var(--accent-soft); color: var(--accent); }
+    .badge-quality-amazing { background: rgba(15, 123, 108, 0.1); color: var(--success); }
+    .idea-card .categories-list { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted); }
+    .idea-card .related-ideas { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .idea-card .related-ideas .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.35rem; }
+    .idea-card .related-ideas a { font-size: 0.8rem; color: var(--accent); text-decoration: none; margin-right: 0.5rem; }
+    .idea-card .related-ideas a:hover { text-decoration: underline; }
+    .features-toggle {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      cursor: pointer;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: inherit;
+    }
+    .features-toggle:hover { text-decoration: underline; }
+    .features-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .features-list {
+      margin-top: 0.5rem;
+      padding-left: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: none;
+    }
+    .features-list.visible { display: block; }
+    .features-list li { margin-bottom: 0.25rem; }
+    footer {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    footer .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1rem; margin-bottom: 0.5rem; }
+    .loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+    .no-results { padding: 2rem; text-align: center; color: var(--text-muted); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .copy-toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); padding: 0.5rem 1rem; background: var(--success); color: #fff; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 100; }
+    .copy-toast.visible { opacity: 1; }
+
+    /* Touch targets min 44px (WCAG 2.5.5), focus visible for keyboard */
+    .pill { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .share-btn { min-height: 44px; min-width: 44px; }
+    .search-wrap input { min-height: 44px; }
+    .sort-wrap select { min-height: 44px; }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      header { padding: 1.25rem 1rem 1rem; }
+      header h1 { font-size: 1.5rem; }
+      header .subtitle { font-size: 0.95rem; }
+      .about-block { padding: 0.875rem 1rem; font-size: 0.875rem; }
+      nav { padding: 0.75rem 1rem; gap: 0.5rem; }
+      nav .filter-group:not(:first-child) { margin-left: 0; margin-top: 0.25rem; }
+      .filter-group { width: 100%; }
+      .filter-group[role="group"] { flex: 1 1 100%; }
+      .search-wrap { order: 10; width: 100%; margin-left: 0; margin-top: 0.5rem; }
+      .search-wrap input { min-width: 100%; width: 100%; }
+      .search-hint { display: none; }
+      .sort-wrap, .share-wrap { margin-left: 0; }
+      main { padding: 1rem; }
+      .ideas-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+      .idea-card { padding: 1rem; }
+      footer { padding: 1rem; margin-top: 1.5rem; }
+      .footer-links { gap: 0.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.35rem; }
+      .pill .count { display: none; }
+      .copy-toast { left: 1rem; right: 1rem; transform: none; bottom: 1rem; text-align: center; }
+    }
+
+    /* Safe area for notched devices */
+    @supports (padding: env(safe-area-inset-bottom)) {
+      .copy-toast { bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+      @media (max-width: 480px) { .copy-toast { bottom: calc(1rem + env(safe-area-inset-bottom)); } }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+      .idea-card:hover { transition: none; }
+    }
+
+    /* Dark theme */
+    html.theme-dark {
+      color-scheme: dark;
+    }
+    .theme-dark {
+      --bg: #191919;
+      --surface: #252525;
+      --surface-hover: #2f2f2f;
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #e3e2e0;
+      --text-muted: #9b9a97;
+      --accent: #6eb3f7;
+      --accent-soft: rgba(110, 179, 247, 0.12);
+      --success: #4ecdc4;
+      --warn: #e6b800;
+      --danger: #ff6b6b;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .theme-dark .idea-card:hover { border-color: rgba(255,255,255,0.2); box-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    .theme-btn, .export-btn {
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .theme-btn:hover, .export-btn:hover { background: var(--surface-hover); border-color: var(--text-muted); }
+    .theme-btn:focus-visible, .export-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .theme-btn { font-size: 1.1rem; line-height: 1; }
+    .no-results .clear-filters { margin-top: 0.75rem; padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); color: var(--accent); cursor: pointer; font-family: inherit; font-size: 0.9rem; }
+    .no-results .clear-filters:hover { background: var(--surface-hover); }
+    .no-results .clear-filters:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .search-wrap input { padding-right: 2rem; }
+    .search-hint { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); font-size: 0.75rem; color: var(--text-muted); pointer-events: none; }
+    .search-wrap { position: relative; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <h1>Islamic Tech Ideas Board</h1>
+    <p class="subtitle">Open source ideas for prayer tools, mosque apps, zakat, Quran, Ramadan, and Islamic finance. Filter by category and status, then use templates and workflows to take ideas into production.</p>
+    <div class="about-block" id="about-block">
+      <strong>What this is:</strong> A curated list of Islamic tech ideas from <a href="https://ummah.build">Ummah.build</a>. Each idea has a description, status, and feature list. Use the <a href="https://github.com/ummahbuild/ideas/tree/main/docs/templates">templates</a> (idea dissection, Islamic authenticity, go-to-market, personas, messaging) and <a href="https://github.com/ummahbuild/ideas/tree/main/docs/workflows">workflows</a> to go from idea to MVP or launch.
+    </div>
+  </header>
+  <nav aria-label="Filter ideas">
+    <div class="filter-group">
+      <h2 id="filter-cat-label">Category</h2>
+      <div class="filter-group" role="group" aria-labelledby="filter-cat-label" id="category-filters"></div>
+    </div>
+    <div class="filter-group">
+      <h2 id="filter-status-label">Status</h2>
+      <div class="filter-group" role="group" aria-labelledby="filter-status-label" id="status-filters"></div>
+    </div>
+    <div class="sort-wrap">
+      <label for="sort-select">Sort</label>
+      <select id="sort-select" aria-label="Sort ideas">
+        <option value="default">Default</option>
+        <option value="title">Title A–Z</option>
+        <option value="quality">Quality</option>
+        <option value="status">Status</option>
+      </select>
+    </div>
+    <div class="search-wrap">
+      <label for="search-input" class="visually-hidden">Search ideas</label>
+      <input type="search" id="search-input" placeholder="Search ideas..." aria-label="Search ideas" autocomplete="off" />
+      <span class="search-hint" aria-hidden="true">/ to focus</span>
+    </div>
+    <div class="share-wrap">
+      <button type="button" class="export-btn" id="export-btn" aria-label="Export filtered ideas as JSON">Export JSON</button>
+      <button type="button" class="share-btn" id="share-btn" aria-label="Copy link to current view">Copy link</button>
+      <button type="button" class="theme-btn" id="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+    </div>
+  </nav>
+  <main id="main" role="main" aria-label="Ideas list">
+    <p class="board-stats" id="board-stats" aria-live="polite">Loading…</p>
+    <div class="ideas-grid" id="ideas-grid"></div>
+    <p class="no-results" id="no-results" style="display:none;">No ideas match your filters. Try changing category or search. <button type="button" class="clear-filters" id="clear-filters">Clear filters</button></p>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/ummahbuild/ideas/blob/main/CONTRIBUTING.md">Contribute</a>
+      <a href="https://github.com/ummahbuild/ideas/tree/main/docs/templates">Templates</a>
+      <a href="https://github.com/ummahbuild/ideas/tree/main/docs/workflows">Workflows</a>
+      <a href="https://github.com/ummahbuild/ideas/blob/main/IMPROVEMENTS.md">Improvements</a>
+      <a href="https://github.com/ummahbuild/ideas">GitHub</a>
+      <a href="https://ummah.build">Ummah.build</a>
+      <a href="https://ideas.ummah.build/sitemap.xml">Sitemap</a>
+    </div>
+    <p>Islamic tech ideas board · <a href="https://ideas.ummah.build">ideas.ummah.build</a></p>
+  </footer>
+  <div id="copy-toast" class="copy-toast" aria-live="polite" role="status"></div>
+
+  <script>
+    (function () {
+      const BASE_URL = 'https://ideas.ummah.build';
+      const THEME_KEY = 'ideas-theme';
+      let ideas = [];
+      let categories = [];
+      let activeCategory = '';
+      let activeStatus = '';
+      let searchQuery = '';
+      let sortBy = 'default';
+
+      function getThemePreference() {
+        try { return localStorage.getItem(THEME_KEY) || 'auto'; } catch (e) { return 'auto'; }
+      }
+      function setThemePreference(val) {
+        try { localStorage.setItem(THEME_KEY, val); } catch (e) {}
+      }
+      function applyTheme() {
+        var pref = getThemePreference();
+        var dark = pref === 'dark' || (pref === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('theme-dark', dark);
+        var btn = document.getElementById('theme-btn');
+        if (btn) btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function getParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+          category: params.get('category') || '',
+          status: params.get('status') || '',
+          q: params.get('q') || '',
+          sort: params.get('sort') || 'default'
+        };
+      }
+
+      function pushUrl() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('category', activeCategory);
+        url.searchParams.set('status', activeStatus);
+        url.searchParams.set('q', searchQuery);
+        url.searchParams.set('sort', sortBy);
+        ['category', 'status', 'q', 'sort'].forEach(function (k) {
+          if (!url.searchParams.get(k)) url.searchParams.delete(k);
+        });
+        window.history.replaceState({}, '', url.pathname + (url.search || '') + (url.hash || ''));
+      }
+
+      function filterIdeas() {
+        return ideas.filter(function (idea) {
+          if (activeCategory && (!idea.categories || !idea.categories.includes(activeCategory))) return false;
+          if (activeStatus && idea.status !== activeStatus) return false;
+          if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            const title = (idea.title || '').toLowerCase();
+            const desc = (idea.description || '').toLowerCase();
+            const slug = (idea.slug || '').toLowerCase();
+            const reqs = (idea.requirements || []).join(' ').toLowerCase();
+            if (!title.includes(q) && !desc.includes(q) && !slug.includes(q) && !reqs.includes(q)) return false;
+          }
+          return true;
+        });
+      }
+
+      function sortIdeas(list) {
+        const qualityOrder = { amazing: 0, good: 1, okay: 2 };
+        const statusOrder = { production: 0, 'in-progress': 1, ideating: 2, archived: 3 };
+        if (sortBy === 'title') {
+          return list.slice().sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
+        }
+        if (sortBy === 'quality') {
+          return list.slice().sort(function (a, b) {
+            return (qualityOrder[a.quality] ?? 3) - (qualityOrder[b.quality] ?? 3);
+          });
+        }
+        if (sortBy === 'status') {
+          return list.slice().sort(function (a, b) {
+            return (statusOrder[a.status] ?? 4) - (statusOrder[b.status] ?? 4);
+          });
+        }
+        return list.slice().sort(function (a, b) { return Number(a.id) - Number(b.id) || 0; });
+      }
+
+      function getRelatedIdeas(idea, allIdeas, limit) {
+        var related = [];
+        var ids = {};
+        ids[idea.id] = true;
+        if (idea.relatedSlugs && idea.relatedSlugs.length) {
+          idea.relatedSlugs.forEach(function (s) {
+            if (related.length >= limit) return;
+            var other = allIdeas.find(function (i) { return (i.slug || i.id) === s; });
+            if (other && !ids[other.id]) { related.push(other); ids[other.id] = true; }
+          });
+        }
+        var cats = idea.categories || [];
+        if (cats.length && related.length < limit) {
+          allIdeas.forEach(function (i) {
+            if (related.length >= limit || ids[i.id]) return;
+            var shared = (i.categories || []).filter(function (c) { return cats.indexOf(c) >= 0; });
+            if (shared.length) { related.push(i); ids[i.id] = true; }
+          });
+        }
+        if (related.length < limit) {
+          allIdeas.forEach(function (i) {
+            if (related.length >= limit || ids[i.id]) return;
+            if (i.status === idea.status) { related.push(i); ids[i.id] = true; }
+          });
+        }
+        return related.slice(0, limit);
+      }
+
+      function countByCategory() {
+        const out = {};
+        (categories.categories || []).forEach(function (c) { out[c.slug] = 0; });
+        ideas.forEach(function (idea) {
+          (idea.categories || []).forEach(function (slug) { if (out[slug] !== undefined) out[slug]++; });
+        });
+        return out;
+      }
+
+      function countByStatus() {
+        const out = { '': ideas.length, ideating: 0, 'in-progress': 0, production: 0, archived: 0 };
+        ideas.forEach(function (i) { if (out[i.status] !== undefined) out[i.status]++; });
+        return out;
+      }
+
+      function renderCategoryFilters() {
+        const container = document.getElementById('category-filters');
+        if (!container) return;
+        container.innerHTML = '';
+        const catCounts = countByCategory();
+        const allCount = ideas.length;
+        const all = document.createElement('button');
+        all.type = 'button';
+        all.className = 'pill' + (activeCategory ? '' : ' active');
+        all.innerHTML = 'All <span class="count">(' + allCount + ')</span>';
+        all.addEventListener('click', function () { activeCategory = ''; applyFilters(); });
+        container.appendChild(all);
+        (categories.categories || []).forEach(function (cat) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'pill' + (activeCategory === cat.slug ? ' active' : '');
+          b.innerHTML = cat.name + ' <span class="count">(' + (catCounts[cat.slug] || 0) + ')</span>';
+          b.addEventListener('click', function () { activeCategory = cat.slug; applyFilters(); });
+          container.appendChild(b);
+        });
+      }
+
+      function renderStatusFilters() {
+        const statuses = [
+          { value: '', label: 'All' },
+          { value: 'ideating', label: 'Ideating' },
+          { value: 'in-progress', label: 'In progress' },
+          { value: 'production', label: 'Production' },
+          { value: 'archived', label: 'Archived' }
+        ];
+        const container = document.getElementById('status-filters');
+        if (!container) return;
+        container.innerHTML = '';
+        const statusCounts = countByStatus();
+        statuses.forEach(function (s) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'pill' + (activeStatus === s.value ? ' active' : '');
+          b.innerHTML = s.label + ' <span class="count">(' + (statusCounts[s.value] ?? 0) + ')</span>';
+          b.addEventListener('click', function () { activeStatus = s.value; applyFilters(); });
+          container.appendChild(b);
+        });
+      }
+
+      function applyFilters() {
+        document.querySelectorAll('#category-filters .pill').forEach(function (p, i) {
+          if (i === 0) p.classList.toggle('active', !activeCategory);
+          else {
+            const cat = (categories.categories || [])[i - 1];
+            p.classList.toggle('active', cat && activeCategory === cat.slug);
+          }
+        });
+        document.querySelectorAll('#status-filters .pill').forEach(function (p, i) {
+          const statusValues = ['', 'ideating', 'in-progress', 'production', 'archived'];
+          p.classList.toggle('active', activeStatus === statusValues[i]);
+        });
+        var filtered = filterIdeas();
+        filtered = sortIdeas(filtered);
+        renderIdeas(filtered);
+        document.getElementById('board-stats').textContent = filtered.length + ' of ' + ideas.length + ' ideas';
+        document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+        pushUrl();
+      }
+
+      function renderIdeas(list) {
+        const grid = document.getElementById('ideas-grid');
+        grid.innerHTML = '';
+        list.forEach(function (idea) {
+          const slug = (idea.slug || idea.id || '').toString();
+          const card = document.createElement('article');
+          card.className = 'idea-card';
+          card.id = 'idea-' + escapeHtml(slug);
+          card.setAttribute('data-slug', slug);
+          const catNames = (idea.categories || []).map(function (s) {
+            const c = (categories.categories || []).find(x => x.slug === s);
+            return c ? c.name : s;
+          }).join(', ');
+          const titleEsc = escapeHtml(idea.title || 'Untitled');
+          const descEsc = escapeHtml(idea.description || '');
+          const titleHtml = idea.url ? '<a href="' + escapeHtml(idea.url) + '" rel="noopener">' + titleEsc + '</a>' : '<a href="#idea-' + escapeHtml(slug) + '">' + titleEsc + '</a>';
+          var categoriesHtml = catNames ? '<div class="categories-list">' + escapeHtml(catNames) + '</div>' : '';
+          var related = getRelatedIdeas(idea, ideas, 4);
+          var relatedHtml = '';
+          if (related.length) {
+            relatedHtml = '<div class="related-ideas"><span class="label">Related</span> ' +
+              related.map(function (r) {
+                var s = (r.slug || r.id || '').toString();
+                var t = escapeHtml(r.title || 'Untitled');
+                return '<a href="#idea-' + escapeHtml(s) + '">' + t + '</a>';
+              }).join(', ') + '</div>';
+          }
+          const reqs = idea.requirements || [];
+          var featuresHtml = '';
+          if (reqs.length) {
+            featuresHtml = '<button type="button" class="features-toggle" aria-expanded="false">' + reqs.length + ' features</button>' +
+              '<ul class="features-list">' +
+              reqs.map(function (r) { return '<li>' + escapeHtml(r) + '</li>'; }).join('') + '</ul>';
+          }
+          card.innerHTML =
+            '<div class="card-head">' +
+              '<span class="emoji" aria-hidden="true">' + (idea.emoji || '💡') + '</span>' +
+              '<div class="title-wrap">' +
+                '<h2 class="title">' + titleHtml + '</h2>' +
+                '<p class="description">' + descEsc + '</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="badges">' +
+              '<span class="badge badge-status-' + (idea.status || 'ideating') + '">' + escapeHtml((idea.status || 'ideating').replace(/-/g, ' ')) + '</span>' +
+              (idea.quality ? '<span class="badge badge-quality-' + idea.quality + '">' + escapeHtml(idea.quality) + '</span>' : '') +
+            '</div>' +
+            categoriesHtml +
+            relatedHtml +
+            featuresHtml;
+          var toggle = card.querySelector('.features-toggle');
+          var featList = card.querySelector('.features-list');
+          if (toggle && featList) {
+            toggle.addEventListener('click', function () {
+              featList.classList.toggle('visible');
+              toggle.setAttribute('aria-expanded', featList.classList.contains('visible'));
+            });
+          }
+          grid.appendChild(card);
+        });
+        var hash = window.location.hash.slice(1);
+        if (hash && hash.startsWith('idea-')) {
+          var el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var t = el.querySelector('.features-toggle');
+            if (t) { t.click(); }
+          }
+        }
+      }
+
+      function injectJsonLd() {
+        var list = ideas;
+        var itemListElement = list.map(function (idea, idx) {
+          var slug = idea.slug || idea.id;
+          return {
+            '@type': 'ListItem',
+            position: idx + 1,
+            item: {
+              '@type': 'SoftwareApplication',
+              '@id': BASE_URL + '#idea-' + (slug || ''),
+              name: idea.title,
+              description: idea.description,
+              applicationCategory: 'LifestyleApplication',
+              url: idea.url || BASE_URL + '#idea-' + (slug || '')
+            }
+          };
+        });
+        var itemList = {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Islamic Tech Ideas – Ummah.build',
+          description: 'Open source ideas for Islamic tech: prayer tools, mosque, zakat, Quran, Ramadan, Islamic finance. Browse and contribute.',
+          numberOfItems: list.length,
+          itemListElement: itemListElement
+        };
+        var website = {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Ummah.build Ideas',
+          url: BASE_URL + '/',
+          description: 'Open source Islamic tech ideas board. Prayer tools, mosque, zakat, Quran, Ramadan, Islamic finance.',
+          publisher: { '@type': 'Organization', name: 'Ummah.build', url: 'https://ummah.build' },
+          potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: BASE_URL + '/?q={search_term_string}' }, 'query-input': 'required name=search_term_string' }
+        };
+        var breadcrumb = {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Ummah.build', item: 'https://ummah.build' },
+            { '@type': 'ListItem', position: 2, name: 'Ideas Board', item: BASE_URL + '/' }
+          ]
+        };
+        var faq = {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            { '@type': 'Question', name: 'What is the Ummah.build Ideas Board?', acceptedAnswer: { '@type': 'Answer', text: 'An open source board of Islamic tech ideas: prayer tools, mosque apps, zakat, Quran, Ramadan, Islamic finance. You can browse ideas by category and status, and use templates and workflows to take ideas from the board into production.' } },
+            { '@type': 'Question', name: 'How do I take an idea into production?', acceptedAnswer: { '@type': 'Answer', text: 'Use the idea dissection template to define problem and solution, run the Islamic authenticity checklist if needed, then follow the go-to-market and personas/messaging templates. Full workflow is in the repo under docs/workflows.' } }
+          ]
+        };
+        function addScript(data) {
+          var script = document.createElement('script');
+          script.type = 'application/ld+json';
+          script.textContent = JSON.stringify(data);
+          document.head.appendChild(script);
+        }
+        addScript(website);
+        addScript(breadcrumb);
+        addScript(itemList);
+        addScript(faq);
+      }
+
+      function showCopyToast(msg) {
+        var toast = document.getElementById('copy-toast');
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add('visible');
+        setTimeout(function () { toast.classList.remove('visible'); }, 2000);
+      }
+
+      function exportFilteredJson() {
+        var filtered = filterIdeas();
+        var sorted = sortIdeas(filtered);
+        var blob = new Blob([JSON.stringify(sorted, null, 2)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'ummah-ideas-filtered-' + new Date().toISOString().slice(0, 10) + '.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+        showCopyToast('Exported ' + sorted.length + ' ideas');
+      }
+
+      function clearFilters() {
+        activeCategory = '';
+        activeStatus = '';
+        searchQuery = '';
+        var searchEl = document.getElementById('search-input');
+        if (searchEl) searchEl.value = '';
+        var sortEl = document.getElementById('sort-select');
+        if (sortEl) sortEl.value = 'default';
+        sortBy = 'default';
+        applyFilters();
+      }
+
+      function init() {
+        applyTheme();
+        var catContainer = document.getElementById('category-filters');
+        var statusContainer = document.getElementById('status-filters');
+        if (!catContainer || !statusContainer) return;
+        var params = getParams();
+        activeCategory = params.category;
+        activeStatus = params.status;
+        searchQuery = params.q;
+        sortBy = params.sort;
+        var searchEl = document.getElementById('search-input');
+        if (searchEl) searchEl.value = searchQuery;
+        var sortEl = document.getElementById('sort-select');
+        if (sortEl) { sortEl.value = sortBy; sortEl.addEventListener('change', function () { sortBy = this.value; applyFilters(); }); }
+        document.getElementById('share-btn').addEventListener('click', function () {
+          var url = new URL(window.location.href);
+          url.searchParams.set('category', activeCategory);
+          url.searchParams.set('status', activeStatus);
+          url.searchParams.set('q', searchQuery);
+          url.searchParams.set('sort', sortBy);
+          ['category', 'status', 'q', 'sort'].forEach(function (k) { if (!url.searchParams.get(k)) url.searchParams.delete(k); });
+          var full = url.pathname + (url.search || '') + (url.hash || '');
+          navigator.clipboard.writeText(url.origin + full).then(function () {
+            showCopyToast('Link copied');
+          }).catch(function () { showCopyToast('Copy failed'); });
+        });
+        document.getElementById('export-btn').addEventListener('click', exportFilteredJson);
+        document.getElementById('theme-btn').addEventListener('click', function () {
+          var pref = getThemePreference();
+          var next = pref === 'light' ? 'dark' : pref === 'dark' ? 'auto' : 'light';
+          setThemePreference(next);
+          applyTheme();
+          showCopyToast(next === 'auto' ? 'Theme: system' : 'Theme: ' + next);
+        });
+        document.getElementById('clear-filters').addEventListener('click', clearFilters);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement && document.activeElement.tagName) || '')) {
+            e.preventDefault();
+            if (searchEl) { searchEl.focus(); }
+          }
+        });
+        if (window.matchMedia) window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { if (getThemePreference() === 'auto') applyTheme(); });
+        window.addEventListener('popstate', function () {
+          var p = getParams();
+          activeCategory = p.category;
+          activeStatus = p.status;
+          searchQuery = p.q;
+          sortBy = p.sort;
+          if (searchEl) searchEl.value = searchQuery;
+          if (sortEl) sortEl.value = sortBy;
+          applyFilters();
+        });
+        Promise.all([
+          fetch('categories.json').then(function (r) { return r.json(); }),
+          fetch('ideas.json').then(function (r) { return r.json(); })
+        ]).then(function (res) {
+          categories = res[0];
+          ideas = Array.isArray(res[1]) ? res[1] : [];
+          renderCategoryFilters();
+          renderStatusFilters();
+          if (searchEl) searchEl.addEventListener('input', function () { searchQuery = this.value.trim(); applyFilters(); });
+          applyFilters();
+          injectJsonLd();
+        }).catch(function () {
+          document.getElementById('board-stats').textContent = 'Could not load ideas. Check that ideas.json and categories.json exist.';
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>

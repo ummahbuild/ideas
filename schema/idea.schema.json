@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ummah.build/schema/idea.json",
+  "title": "Ummah.build Idea",
+  "description": "Structured schema for Islamic tech ideas. Used for validation, SEO JSON-LD, and contribution workflows.",
+  "type": "object",
+  "required": ["id", "title", "description", "slug", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (e.g. numeric string)"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "description": "Short, clear project name"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "One or two sentence pitch for the idea"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "URL-safe lowercase slug (e.g. mosque-database)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ideating", "in-progress", "production", "archived"],
+      "description": "Current stage of the idea or product"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Live URL when in progress or production"
+    },
+    "emoji": {
+      "type": "string",
+      "maxLength": 4,
+      "description": "Single emoji for the idea"
+    },
+    "quality": {
+      "type": "string",
+      "enum": ["okay", "good", "amazing"],
+      "description": "Subjective quality rating for prioritization"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Category slugs from categories.json (e.g. [\"prayer-tools\", \"mosque\"])"
+    },
+    "requirements": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Feature list and requirements"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional tags for search (e.g. web3, mobile, api)"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "GitHub or other repo URL"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 last update time"
+    }
+  },
+  "additionalProperties": true
+}

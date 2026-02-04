@@ -1,0 +1,5 @@
+# https://ideas.ummah.build
+User-agent: *
+Allow: /
+
+Sitemap: https://ideas.ummah.build/sitemap.xml

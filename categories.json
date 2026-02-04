@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ummah.build Idea Categories",
+  "description": "Canonical categories for Islamic tech and ummah.build ideas. Used for filtering, SEO, and structured data.",
+  "categories": [
+    { "slug": "prayer-tools", "name": "Prayer Tools", "description": "Apps and tools for prayer times, adhaan, qibla, and prayer habits" },
+    { "slug": "islamic-finance", "name": "Islamic Finance", "description": "Halal banking, investing, zakat, and Sharia-compliant finance" },
+    { "slug": "islamic-history", "name": "Islamic History", "description": "Learning and exploring Islamic history, sirah, and heritage" },
+    { "slug": "zakat", "name": "Zakat", "description": "Zakat calculation, distribution, verification, and transparency" },
+    { "slug": "mosque", "name": "Mosque", "description": "Mosque discovery, livestreams, funding, and community" },
+    { "slug": "social", "name": "Social", "description": "Community, connection, and social features for Muslims" },
+    { "slug": "game", "name": "Game", "description": "Islamic games, gamification, and educational play" },
+    { "slug": "prayer-coordination", "name": "Prayer Coordination", "description": "Group prayer, Jummah, and congregation coordination" },
+    { "slug": "islamic-education", "name": "Islamic Education", "description": "Learning Quran, hadith, fiqh, and Islamic knowledge" },
+    { "slug": "transparency", "name": "Transparency", "description": "Accountability, verification, and transparent systems" },
+    { "slug": "self-reflection", "name": "Self Reflection", "description": "Journaling, mindfulness, and personal spiritual growth" },
+    { "slug": "marriage", "name": "Marriage", "description": "Nikah, marriage preparation, and family support" },
+    { "slug": "family", "name": "Family", "description": "Family apps, parenting, and household management" },
+    { "slug": "women", "name": "Women", "description": "Products and services for Muslim women" },
+    { "slug": "haram-police", "name": "Haram Police", "description": "Content filtering, halal verification, and avoiding haram" },
+    { "slug": "islamic-onboarding", "name": "Islamic Onboarding", "description": "New Muslim resources, revert support, and onboarding" },
+    { "slug": "muslim-media", "name": "Muslim Media", "description": "Islamic media, khutbahs, and content platforms" },
+    { "slug": "ramadan", "name": "Ramadan", "description": "Ramadan tools, Taraweeh, iftar, and fasting" },
+    { "slug": "tooling", "name": "Tooling", "description": "Developer tools, APIs, and infrastructure for Islamic tech" },
+    { "slug": "food", "name": "Food", "description": "Halal food, recipes, and dietary guidance" },
+    { "slug": "islamic-legal-tech", "name": "Islamic Legal Tech", "description": "Sharia contracts, wills, and legal compliance" },
+    { "slug": "quran", "name": "Quran", "description": "Quran reading, memorization, tafsir, and recitation" }
+  ]
+}
