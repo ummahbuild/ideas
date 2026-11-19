@@ -23,8 +23,14 @@ on:
       - 'astro.config.mjs'
       - 'package.json'
 
+# Cancel superseded PR checks; keep every non-PR invocation independent.
+concurrency:
+  group: build-deploy.yml-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   build:
+    timeout-minutes: 60
     name: Build from markdown
     runs-on: ubuntu-latest
     steps:
@@ -48,6 +54,7 @@ jobs:
           path: dist
 
   pr-comment:
+    timeout-minutes: 60
     name: Comment on PR
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'synchronize')
@@ -75,6 +82,7 @@ jobs:
             }
 
   deploy:
+    timeout-minutes: 60
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
