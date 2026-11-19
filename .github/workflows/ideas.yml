@@ -24,6 +24,8 @@ concurrency:
 
 jobs:
   validate:
+    # Issue creation does not change the checked-in JSON documents.
+    if: github.event_name != 'issues'
     timeout-minutes: 60
     name: Validate ideas & categories
     runs-on: ubuntu-latest
@@ -70,7 +72,7 @@ jobs:
     timeout-minutes: 60
     name: Issue triage
     runs-on: ubuntu-latest
-    if: github.event_name == 'issues' && github.event.action == 'opened'
+    if: github.event_name == 'issues' && github.event.action == 'opened' && (contains(github.event.issue.labels.*.name, 'new-idea') || contains(github.event.issue.labels.*.name, 'edit-idea') || contains(github.event.issue.labels.*.name, 'template'))
     steps:
       - name: Comment on idea issue
         uses: actions/github-script@v7
