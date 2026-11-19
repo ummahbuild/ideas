@@ -17,8 +17,14 @@ on:
   issues:
     types: [opened]
 
+# Cancel superseded PR checks; keep every non-PR invocation independent.
+concurrency:
+  group: ideas.yml-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   validate:
+    timeout-minutes: 60
     name: Validate ideas & categories
     runs-on: ubuntu-latest
     steps:
@@ -61,6 +67,7 @@ jobs:
 
   # Optional: add comment on new-idea / edit-idea issues with contribution link
   issue-triage:
+    timeout-minutes: 60
     name: Issue triage
     runs-on: ubuntu-latest
     if: github.event_name == 'issues' && github.event.action == 'opened'
